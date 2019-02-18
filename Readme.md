@@ -21,11 +21,11 @@ Services ---
 Countries:
     get all countries:
         Method: GET
-        path: http://localhost:3000/api/country
+        path: http://localhost:4000/api/country
     
     add a country:
         Method: POST
-        path: http://localhost:3000/api/country
+        path: http://localhost:4000/api/country
         body: {
 	            "countryName": "test",
                 "countryCode": "test",
@@ -34,18 +34,18 @@ Countries:
 
     get a country by countryCode:
         Method: GET
-        path: http://localhost:3000/api/country/test
+        path: http://localhost:4000/api/country/test
 
 
 Number Types :
 
     get all numbertypes:
         Method: GET
-        path: http://localhost:3000/api/numbertype
+        path: http://localhost:4000/api/numbertype
     
     add a numbertype:
         Method: POST
-        path: http://localhost:3000/api/numbertype
+        path: http://localhost:4000/api/numbertype
         body: {
 	            "name": "test",
                 "code": "test",
@@ -53,18 +53,18 @@ Number Types :
 
     get a numbertype by numbertypecode:
         Method: GET
-        path: http://localhost:3000/api/numbertype/test
+        path: http://localhost:4000/api/numbertype/test
 
 
 Pricing :
 
     get all pricings available:
         Method: GET
-        path: http://localhost:3000/api/pricing
+        path: http://localhost:4000/api/pricing
     
     add a pricing:
         Method: POST
-        path: http://localhost:3000/api/pricing
+        path: http://localhost:4000/api/pricing
         body: {
                 "numberTypeCode": "test1",
                 "countryCode": "test",
@@ -73,7 +73,7 @@ Pricing :
 
     calculate pricings:
         Method: post
-        path: http://localhost:3000/api/pricing/calculatepricing
+        path: http://localhost:4000/api/pricing/calculatepricing
         body: {
                 "numberTypeCode": "test1",
                 "countryCode": "test",

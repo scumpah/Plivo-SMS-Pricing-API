@@ -116,9 +116,13 @@ async function getCalculatedPricingController(req, res) {
         if(req.body.smsType !=='' && req.body.number !== 0) {
             const pricings = await getPriceByParams(body);
             const calculatedpricings = getCalculatedPricings(pricings, body);
-            res.status(200).json(calculatedpricings);
+            let result = [];
+            console.log(calculatedpricings);
+            calculatedpricings.then(ob=> {result= ob;
+              res.status(200).json(result);
+            })
         } else {
-            res.sendStatus(200).json({"message": "Not a valid input"});
+            res.status(200).json({"message": "Not a valid input"});
         }
       } catch (e) {
         logger.error(`getCalculatedPricingController: ${e.stack}`);
