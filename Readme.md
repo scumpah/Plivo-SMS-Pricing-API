@@ -13,7 +13,7 @@ Collections:
 
 Countries ---- To maintain countryname,countrycode,currency
 numberTypes ---- Phone number, Dial-in.....
-pricing ---- countrycode, numbertypecode and price (For this use case numberTypeCode is optional)
+pricing ---- countrycode, numbertypecode, inboundprice, outboundprice (For this use case numberTypeCode is optional)
 
 
 Services ---
