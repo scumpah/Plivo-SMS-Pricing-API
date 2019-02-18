@@ -68,7 +68,8 @@ Pricing :
         body: {
                 "numberTypeCode": "test1",
                 "countryCode": "test",
-                "price":4
+                "inboundprice":4,
+                "outboundprice":4
               }
 
     calculate pricings:

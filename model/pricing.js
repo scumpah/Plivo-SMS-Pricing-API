@@ -11,7 +11,11 @@ const pricingSchema = new Schema({
     required: true,
     type: Schema.Types.String,
   },
-  price: {
+  inboundprice: {
+    required: true,
+    type: Schema.Types.Number,
+  },
+  outboundprice: {
     required: true,
     type: Schema.Types.Number,
   },

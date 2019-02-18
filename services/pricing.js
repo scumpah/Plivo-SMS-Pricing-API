@@ -15,7 +15,8 @@ const Pricing = require('../model/pricing');
 const pricingSchema = Joi.object({
   numberTypeCode: Joi.string().required(),
   countryCode: Joi.string().required(),
-  price: Joi.number().required(),
+  inboundprice: Joi.number().required(),
+  outboundprice: Joi.number().required(),
 })
   .unknown(false)
   .required();
@@ -54,14 +55,14 @@ async function getCalculatedPricings(pricings, body) {
             pricingresponse.numberTypeCode = body.numberTypeCode;
             pricingresponse.countryCode = body.countryCode;
             if(body.smsType === 'inbound') {
-                pricingresponse.inboundSmsPrice = body.number * pricing.price;
+                pricingresponse.inboundSmsPrice = body.number * pricing.inboundprice;
                 pricingresponse.outboundSmsPrice = 0;
             } else if(body.smsType === 'outbound') {
                 pricingresponse.inboundSmsPrice = 0;
-                pricingresponse.outboundSmsPrice = body.number * pricing.price;
+                pricingresponse.outboundSmsPrice = body.number * pricing.outboundprice;
             } else {
-                pricingresponse.inboundSmsPrice = body.number * pricing.price * 0.3;
-                pricingresponse.outboundSmsPrice = body.number * pricing.price * 0.7;
+                pricingresponse.inboundSmsPrice = body.number * pricing.inboundprice * 0.3;
+                pricingresponse.outboundSmsPrice = body.number * pricing.outboundprice * 0.7;
             }
             calculatedpricings.push(pricingresponse);
         });
